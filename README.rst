@@ -1,3 +1,11 @@
+`blogofobe` is an attempt to keep Blogofile going. At the time this was forked from it, there were plenty of issues that weren't getting replied to and pull requests that weren't getting merged. I tried to write the authors but didn't get much in turn. As a user of Blogofile, I wanted to keep it going.
+
+Oh, and about the name. Blogofile is a play on the notion of a blog addict ("blogophile") and the fact that everything's a file rather than having some silly CMS. I like this notion, but the thing that has kept me from blogging in the past is that they all had some ridiculously bloated web interface and/or that I had to touch HTML or CSS. I understand it, but I don't like it. Not when it comes to writing, at least. So I consider myself a blogophobe. I'm afraid of typical blogs. `blogofobe` is a soothing balm to CLI users like myself.
+
+If there's any weird stuff that seems to be holdovers from Blogofile, it probably is. Pull requests welcome!
+
+---
+
 Blogofile is a static website compiler that lets you use various template
 libraries (Mako, Jinja2),
 and various markup languages (reStructuredText, Markdown, Textile)
