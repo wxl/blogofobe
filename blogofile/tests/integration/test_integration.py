@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Integration tests for blogofile.
+"""Integration tests for blogofobe.
 """
 import os
 import shutil
@@ -11,28 +11,28 @@ except ImportError:
 from ... import main
 
 
-class TestBlogofileCommands(unittest.TestCase):
-    """Intrgration tests for the blogofile commands.
+class TestblogofobeCommands(unittest.TestCase):
+    """Intrgration tests for the blogofobe commands.
     """
     def _call_entry_point(self, *args):
         main.main(*args)
 
-    def test_blogofile_init_bare_site(self):
-        """`blogofile init src` initializes bare site w/ _config.py file
+    def test_blogofobe_init_bare_site(self):
+        """`blogofobe init src` initializes bare site w/ _config.py file
         """
         src_dir = mkdtemp()
         self.addCleanup(shutil.rmtree, src_dir)
         os.rmdir(src_dir)
-        self._call_entry_point(['blogofile', 'init', src_dir])
+        self._call_entry_point(['blogofobe', 'init', src_dir])
         self.assertEqual(os.listdir(src_dir), ['_config.py'])
 
-    def test_blogofile_build_bare_site(self):
-        """`blogofile build` on bare site creates _site directory
+    def test_blogofobe_build_bare_site(self):
+        """`blogofobe build` on bare site creates _site directory
         """
         self.addCleanup(os.chdir, os.getcwd())
         src_dir = mkdtemp()
         self.addCleanup(shutil.rmtree, src_dir)
         os.rmdir(src_dir)
-        self._call_entry_point(['blogofile', 'init', src_dir])
-        self._call_entry_point(['blogofile', 'build', '-s', src_dir])
+        self._call_entry_point(['blogofobe', 'init', src_dir])
+        self._call_entry_point(['blogofobe', 'build', '-s', src_dir])
         self.assertIn('_site', os.listdir(src_dir))
