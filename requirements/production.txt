@@ -1,4 +1,4 @@
-# Python packages required to run blogofile
+# Python packages required to run blogofobe
 #
 # Versions shown are those tested at the time of the last release.
 # setup.py does not use pinned versions (other than `textile==2.1.4-py3k`

@@ -1,4 +1,4 @@
-# Packages required to hack on blogofile
+# Packages required to hack on blogofobe
 #
 # Versions shown are those tested at the time of the last release.
 
