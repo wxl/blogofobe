@@ -1,6 +1,6 @@
 -*- coding: utf-8 -*-
 
-Blogofobe Contributors
+blogofobe Contributors
 ======================
 
 The original Blogofile and the blogofile_blog plugin were created by:
@@ -11,7 +11,6 @@ Walter Lapchynski <wxl@polka.bike>
 
 The following people have contributed code, documentation, bug
 reports, enlightened discussion, etc. to the project:
-
 Brendan Perrine
 
 Thank you, one and all!
