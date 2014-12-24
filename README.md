@@ -4,7 +4,7 @@ Oh, and about the name. Blogofile is a play on the notion of a blog addict ("blo
 
 If there's any weird stuff that seems to be holdovers from Blogofile, it probably is. Pull requests welcome!
 
-======
+===
 
 Blogofobe is a static website compiler that lets you use various template
 libraries (Mako, Jinja2),
