@@ -3,10 +3,10 @@ import sys
 import os, os.path
 import imp
 
-import blogofile.main
-from blogofile import argparse
+import blogofobe.main
+from blogofobe import argparse
 
-## These are commands that are installed into the blogofile
+## These are commands that are installed into the blogofobe
 ## command-line utility. You can turn these off entirely by removing
 ## the command_parser_setup parameter in the module __dist__ object.
 

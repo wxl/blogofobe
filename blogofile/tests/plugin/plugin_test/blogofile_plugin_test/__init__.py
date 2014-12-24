@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-    
 import logging
-import blogofile
-import blogofile.plugin
-from blogofile.cache import bf, HierarchicalCache as HC
+import blogofobe
+import blogofobe.plugin
+from blogofobe.cache import bf, HierarchicalCache as HC
 try:
     import urllib.parse as urlparse
 except ImportError:
@@ -24,15 +24,15 @@ __dist__ = dict(
     #The version number:
     version = "0.1",
     #The URL for the plugin (where to download, documentation etc):
-    url = "http://www.blogofile.com",
-    #A one line description of your plugin presented to other Blogofile users:
+    url = "http://www.blogofobe.com",
+    #A one line description of your plugin presented to other blogofobe users:
     description = "Unit tests for plugins",
     #PyPI description, could be the same, except this text
-    #should mention the fact that this is a Blogofile plugin
-    #because non-Blogofile users will see this text:
-    pypi_description = "Unit tests for blogofile plugins",
+    #should mention the fact that this is a blogofobe plugin
+    #because non-blogofobe users will see this text:
+    pypi_description = "Unit tests for blogofobe plugins",
     #Command parser
-    #Ths installs extra commands into blogofile, see commands.py
+    #Ths installs extra commands into blogofobe, see commands.py
     command_parser_setup = commands.setup
     )
 
@@ -54,8 +54,8 @@ config = HC(
         )
     )
 
-tools = blogofile.plugin.PluginTools(__name__)
-logger = logging.getLogger("blogofile.plugins.{0}".format(__name__))
+tools = blogofobe.plugin.PluginTools(__name__)
+logger = logging.getLogger("blogofobe.plugins.{0}".format(__name__))
 
 def init():
     #Initialize the controllers here, but we can reuse a generic tool for that:

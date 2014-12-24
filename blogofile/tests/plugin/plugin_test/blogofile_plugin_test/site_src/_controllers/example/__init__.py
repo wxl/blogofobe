@@ -1,8 +1,8 @@
 import os
 
-from blogofile.cache import bf
+from blogofobe.cache import bf
 
-import blogofile_plugin_test as plugin
+import blogofobe_plugin_test as plugin
 
 def init():
     #Any setup you need to do before running goes here.

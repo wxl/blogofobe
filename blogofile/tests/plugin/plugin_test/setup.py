@@ -1,17 +1,17 @@
 ######################################################################
-#### Instructions for creating a new Blogofile plugin:
+#### Instructions for creating a new blogofobe plugin:
 #### 1) Set module_name to the name of your plugin using only alpha-numeric
 ####    characters and the underscore :
 
-module_name = "blogofile_plugin_test"
+module_name = "blogofobe_plugin_test"
 
-#### 2) Rename the blogofile_plugin_example directory to this same name.
+#### 2) Rename the blogofobe_plugin_example directory to this same name.
 #### 3) Edit module_name/__init__.py and configure the __dist__ object.
 #### 4) Create your plugin's controllers, filters, and other files in
 ####    module_name/site_src
 #### 5) Run "python setup.py develop" to start testing your plugin.
 ####    (You may need to be root or run virtualenv)
-#### 6) Run 'blogofile plugin list' and you should see your plugin listed.
+#### 6) Run 'blogofobe plugin list' and you should see your plugin listed.
 ####
 #### The rest of this file is boilerplate, and you can probably leave as is.
 ######################################################################
@@ -39,9 +39,9 @@ setup(name=module_name,
       packages=[module_name],
       package_data = find_package_data(module_name,"site_src"),
       include_package_data = True,
-      install_requires =['blogofile'],
+      install_requires =['blogofobe'],
       entry_points = {
-        "blogofile.plugins":
+        "blogofobe.plugins":
             ["{module_name} = {module_name}".format(**locals())]
         }
       )

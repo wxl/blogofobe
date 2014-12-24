@@ -1,6 +1,6 @@
 import shutil
 import os
-from blogofile import util
+from blogofobe import util
 
 from . import plugin
 

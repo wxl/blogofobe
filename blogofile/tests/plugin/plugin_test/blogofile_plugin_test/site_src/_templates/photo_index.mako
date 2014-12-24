@@ -1,7 +1,7 @@
 <%inherit file="plugin_base_template" />
 
 This is just a stupid photo gallery as a demonstration plugin for
-Blogofile. It's meant to be as simplistic as possible so as to be easy
+blogofobe. It's meant to be as simplistic as possible so as to be easy
 to read.
 
 <table>
