@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
 from setuptools import setup
-import blogofile
+import blogofobe
 
 
 py_version = sys.version_info[:2]
@@ -10,11 +10,11 @@ PY26 = py_version == (2, 6)
 if PY3:
     if py_version < (3, 2):
         raise RuntimeError(
-            'On Python 3, Blogofile requires Python 3.2 or later')
+            'On Python 3, blogofobe requires Python 3.2 or later')
 else:
     if py_version < (2, 6):
         raise RuntimeError(
-            'On Python 2, Blogofile requires Python 2.6 or later')
+            'On Python 2, blogofobe requires Python 2.6 or later')
 
 with open('README.rst', 'rt') as readme:
     long_description = readme.read()
@@ -37,7 +37,7 @@ dependency_links = []
 if PY3:
     install_requires.append('textile==2.1.4-py3k')
     dependency_links = [
-        'http://github.com/EnigmaCurry/textile-py3k/tarball/2.1.4'
+        'http://github.com/wxl/textile-py3k/tarball/2.1.4'
         '#egg=textile-2.1.4-py3k']
 else:
     install_requires.append('textile')
@@ -56,19 +56,19 @@ classifiers.extend([
 ])
 
 setup(
-    name="Blogofile",
-    version=blogofile.__version__,
+    name="blogofobe",
+    version=blogofobe.__version__,
     description="A static website compiler and blog engine",
     long_description=long_description,
-    author=blogofile.__author__,
-    author_email="blogofile-discuss@googlegroups.com",
-    url="http://www.blogofile.com",
+    author=blogofobe.__author__,
+    author_email="wxl@polka.bike",
+    url="http://github.com/wxl/blogofobe",
     license="MIT",
     classifiers=classifiers,
-    packages=["blogofile"],
+    packages=["blogofobe"],
     install_requires=install_requires,
     dependency_links=dependency_links,
     zip_safe=False,
     entry_points={
-        'console_scripts': ['blogofile = blogofile.main:main']},
+        'console_scripts': ['blogofobe = blogofobe.main:main']},
 )
