@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Export a Wordpress blog to Blogofile /_posts directory format
+"""Export a Wordpress blog to blogofobe /_posts directory format
 
-This file is a part of Blogofile (http://www.blogofile.com)
+This file is a part of blogofobe. 
 
-This file is MIT licensed, see http://blogofile.com/LICENSE.html for details.
+This file is MIT licensed, see http://blogofobe.com/LICENSE.html for details.
 
 Requirements:
 
@@ -17,7 +17,7 @@ Requirements:
 
   * Configure the connection details below and run:
 
-    python wordpress2blogofile.py
+    python wordpress2blogofobe.py
 
     If everything worked right, this will create a _posts directory with your converted posts.
 """

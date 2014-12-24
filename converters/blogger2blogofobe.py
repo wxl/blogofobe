@@ -6,9 +6,9 @@ __author__ = "Seth de l'Isle"
 ## You can generate a Blogger export file by logging into blogger,
 ## then going to Settings -> Basic -> Export Blog.  You will get a
 ## file to download with the current date in the name and a .xml
-## extension.  Running blogger2blogofile.py in that directory, with
+## extension.  Running blogger2blogofobe.py in that directory, with
 ## the filename of the export file as the only argument will generate
-## a _posts directory ready for use with Blogofile.
+## a _posts directory ready for use with blogofobe.
 
 
 import sys
@@ -55,7 +55,7 @@ class Blogger:
 class Entry:
     def __init__(self, feedEntry):
         self.feedEntry = feedEntry
-        fileNameDate = self.blogofile_date('published').replace('/', '-')
+        fileNameDate = self.blogofobe_date('published').replace('/', '-')
         self.build_header()
         dateNameFile = fileNameDate + self.feedEntry.title.replace('/', '-') + '.html'
         if self.data['draft']:
@@ -71,8 +71,8 @@ class Entry:
                         if not 'schemas.google.com' in tag.term]
 
         data = {'tags': tags,
-                'date': self.blogofile_date('published'),
-                'updated': self.blogofile_date('updated'),
+                'date': self.blogofobe_date('published'),
+                'updated': self.blogofobe_date('updated'),
                 'title': self.feedEntry.title,
                 'encoding': 'utf8',
                 'draft': bool('app_draft' in self.feedEntry.keys() and 
@@ -93,14 +93,14 @@ class Entry:
         else:
             targetFile = open(entryPath, 'w')
             print >> targetFile, '---'
-            print >> targetFile, self.blogofile_header()
+            print >> targetFile, self.blogofobe_header()
             print >> targetFile, '---'
             targetFile.write(codecs.encode(self.feedEntry.content[0].value, 'utf8'))
 
-    def blogofile_header(self):
+    def blogofobe_header(self):
         return yaml.safe_dump(self.data)
 
-    def blogofile_date(self, dateType):
+    def blogofobe_date(self, dateType):
         dateStruct = {'published': self.feedEntry.published_parsed,
                       'updated': self.feedEntry.updated_parsed}[dateType]
         return time.strftime("%Y/%m/%d %H:%M:%S", dateStruct)
@@ -169,7 +169,7 @@ class MockBlogger(Blogger):
 class TestBloggerfile(unittest.TestCase):
     def test_entry_header(self):
         entry = Entry(pickle.loads(entryPickle))
-        header = yaml.load(entry.blogofile_header())
+        header = yaml.load(entry.blogofobe_header())
         assert 'barberry' in header['title'].lower()
         assert header['date'] == "2010/11/08 06:36:00"
         assert 'barberry' in header['permalink'].lower()
@@ -181,7 +181,7 @@ class TestBloggerfile(unittest.TestCase):
 
     def test_draft_header(self):
         entry = Entry(pickle.loads(draftPickle))
-        header = yaml.load(entry.blogofile_header())
+        header = yaml.load(entry.blogofobe_header())
         assert header['draft'] == True
 
     def test_write_posts(self):
