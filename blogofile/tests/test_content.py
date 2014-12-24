@@ -6,7 +6,7 @@ except ImportError:
 import tempfile
 import shutil
 import os
-from blogofile import main
+from blogofobe import main
 
 
 @unittest.skip('outdated integration test')
@@ -95,7 +95,7 @@ This is a test post without a permalink
         f.write(src)
         f.close()
         main.config.override_options = {
-            "site.url":"http://www.BlogoFile.com",
+            "site.url":"http://www.blogofobe.com",
             "blog.path":"/Blog",
             "blog.auto_permalink.enabled": True,
             "blog.auto_permalink.path": "/Blog/:year/:month/:day/:title" }

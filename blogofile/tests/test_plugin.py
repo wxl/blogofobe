@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Unit tests for blogofile plugin module.
+"""Unit tests for blogofobe plugin module.
 """
 try:
     import unittest2 as unittest        # For Python 2.6
@@ -72,7 +72,7 @@ class TestPluginTools(unittest.TestCase):
         tools = self._make_one(mock_plugin_module)
         self.assertEqual(
             tools.logger.name,
-            'blogofile.plugins.{0}'.format(mock_plugin_module.__name__))
+            'blogofobe.plugins.{0}'.format(mock_plugin_module.__name__))
 
     def test_template_lookup(self):
         """_template_lookup calls mako.lookup.TemplateLookup w/ expected args

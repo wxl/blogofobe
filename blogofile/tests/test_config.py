@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Unit tests for blogofile config module.
+"""Unit tests for blogofobe config module.
 """
 import os
 try:
@@ -24,9 +24,9 @@ class TestConfigModuleAttributes(unittest.TestCase):
         self.assertIsInstance(config.bf.config, ModuleType)
 
     def test_bf_config_module_name(self):
-        """bf.config attribute is blogofile.config module
+        """bf.config attribute is blogofobe.config module
         """
-        self.assertEqual(config.bf.config.__name__, 'blogofile.config')
+        self.assertEqual(config.bf.config.__name__, 'blogofobe.config')
 
     def test_site_is_hierarchical_cache(self):
         """config has site attribute that is a HierarchicalCache object
@@ -63,7 +63,7 @@ class TestConfigModuleAttributes(unittest.TestCase):
         """
         self.assertEqual(
             config.default_config_path,
-            os.path.join(os.path.abspath('blogofile'), 'default_config.py'))
+            os.path.join(os.path.abspath('blogofobe'), 'default_config.py'))
 
 
 class TestConfigInitInteractive(unittest.TestCase):

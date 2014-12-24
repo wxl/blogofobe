@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Unit tests for blogofile main module.
+"""Unit tests for blogofobe main module.
 
 Tests entry point function, command line parser, and sub-command
 action functions.
@@ -21,7 +21,7 @@ from .. import main
 
 
 class TestEntryPoint(unittest.TestCase):
-    """Unit tests for blogofile entry point function.
+    """Unit tests for blogofobe entry point function.
     """
     def _call_entry_point(self):
         main.main()
@@ -33,7 +33,7 @@ class TestEntryPoint(unittest.TestCase):
         mock_parser, mock_subparsers = mock_setup_parser()
         mock_parser.exit = sys.exit
         with patch.object(main, 'sys') as mock_sys:
-            mock_sys.argv = ['blogofile']
+            mock_sys.argv = ['blogofobe']
             with self.assertRaises(SystemExit):
                 self._call_entry_point()
         mock_parser.print_help.assert_called_once()
@@ -44,7 +44,7 @@ class TestEntryPoint(unittest.TestCase):
         """
         mock_parser, mock_subparsers = mock_setup_parser()
         with patch.object(main, 'sys') as mock_sys:
-            mock_sys.argv = 'blogofile foo'.split()
+            mock_sys.argv = 'blogofobe foo'.split()
             self._call_entry_point()
         mock_parser.parse_args.assert_called_once()
 
@@ -57,7 +57,7 @@ class TestEntryPoint(unittest.TestCase):
         mock_args = Mock()
         mock_parser.parse_args = Mock(return_value=mock_args)
         with patch.object(main, 'sys') as mock_sys:
-            mock_sys.argv = 'blogofile foo bar'.split()
+            mock_sys.argv = 'blogofobe foo bar'.split()
             self._call_entry_point()
         mock_set_verbosity.assert_called_once_with(mock_args)
 
@@ -71,7 +71,7 @@ class TestEntryPoint(unittest.TestCase):
         mock_args = Mock(name='args', func=mock_do_help)
         mock_parser.parse_args = Mock(return_value=mock_args)
         with patch.object(main, 'sys') as mock_sys:
-            mock_sys.argv = 'blogofile help'.split()
+            mock_sys.argv = 'blogofobe help'.split()
             self._call_entry_point()
         mock_do_help.assert_called_once_with(
             mock_args, mock_parser, mock_subparsers)
@@ -84,7 +84,7 @@ class TestEntryPoint(unittest.TestCase):
         mock_args = Mock()
         mock_parser.parse_args = Mock(return_value=mock_args)
         with patch.object(main, 'sys') as mock_sys:
-            mock_sys.argv = 'blogofile foo bar'.split()
+            mock_sys.argv = 'blogofobe foo bar'.split()
             self._call_entry_point()
         mock_args.func.assert_called_once_with(mock_args)
 
@@ -132,7 +132,7 @@ class TestParserTemplate(unittest.TestCase):
             parser_template.parse_args(['--version'])
         self.assertEqual(
             mock_stderr.getvalue(),
-            'Blogofile {0} -- http://www.blogofile.com -- {1} {2}\n'
+            'blogofobe {0} -- http://www.blogofobe.com -- {1} {2}\n'
             .format(__version__, platform.python_implementation(),
                     platform.python_version()))
 
@@ -329,7 +329,7 @@ class TestInitBareSite(unittest.TestCase):
         self.assertEqual(
             mock_stdout.getvalue(),
             '_config.py for a bare (do-it-yourself) site written to {0}\n'
-            'If you were expecting more, please see `blogofile init -h`\n'
+            'If you were expecting more, please see `blogofobe init -h`\n'
             .format(src_dir))
 
 

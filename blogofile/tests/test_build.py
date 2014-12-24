@@ -7,10 +7,10 @@ import tempfile
 import shutil
 import os
 import re
-from blogofile import main
-from blogofile import util
-from blogofile import template
-from blogofile import cache
+from blogofobe import main
+from blogofobe import util
+from blogofobe import template
+from blogofobe import cache
 import logging
 
 
@@ -89,7 +89,7 @@ class TestBuild(unittest.TestCase):
             "site.url": "http://www.test.com/",
             "blog.path": "/blog"}
         shutil.rmtree("_posts")
-        logger = logging.getLogger("blogofile")
+        logger = logging.getLogger("blogofobe")
         #We don't need to see the error that this test checks for:
         logger.setLevel(logging.CRITICAL)
         main.main("build")

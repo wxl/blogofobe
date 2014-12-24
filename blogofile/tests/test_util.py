@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Unit tests for blogofile util module.
+"""Unit tests for blogofobe util module.
 """
 try:
     import unittest2 as unittest        # For Python 2.6
@@ -74,39 +74,39 @@ class TestSitePathHelper(unittest.TestCase):
     def test_root_path(self, mock_config):
         """site_path_helper returns expected path in site root
         """
-        mock_config.site.url = 'http://www.blogofile.com'
+        mock_config.site.url = 'http://www.blogofobe.com'
         path = self._call_fut('blog')
         self.assertEqual(path, '/blog')
 
     def test_subdir_path(self, mock_config):
         """site_path_helper returns expected path in site subdir
         """
-        mock_config.site.url = 'http://www.blogofile.com/~ryan/site1'
+        mock_config.site.url = 'http://www.blogofobe.com/~ryan/site1'
         path = self._call_fut('blog')
         self.assertEqual(path, '/~ryan/site1/blog')
 
     def test_leading_slash(self, mock_config):
         """site_path_helper returns expected path when arg has leading slash
         """
-        mock_config.site.url = 'http://www.blogofile.com/~ryan/site1'
+        mock_config.site.url = 'http://www.blogofobe.com/~ryan/site1'
         path = self._call_fut('/blog')
         self.assertEqual(path, '/~ryan/site1/blog')
 
     def test_multiple_args(self, mock_config):
         """site_path_helper returns expected path for multiple args
         """
-        mock_config.site.url = 'http://www.blogofile.com/~ryan/site1'
+        mock_config.site.url = 'http://www.blogofobe.com/~ryan/site1'
         path = self._call_fut('blog', 'category1')
         self.assertEqual(path, '/~ryan/site1/blog/category1')
 
     def test_trailing_slash(self, mock_config):
         """site_path_helper returns path w/ trailing slash when requested
         """
-        mock_config.site.url = 'http://www.blogofile.com'
+        mock_config.site.url = 'http://www.blogofobe.com'
         path = self._call_fut('blog', trailing_slash=True)
         self.assertEqual(path, '/blog/')
 
     def test_root_slash(self, mock_config):
-        mock_config.site.url = 'http://www.blogofile.com'
+        mock_config.site.url = 'http://www.blogofobe.com'
         path = self._call_fut(trailing_slash=True)
         self.assertEqual(path, '/')
