@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Selenium tests for the builtin Blogofile server. This is only
+# Selenium tests for the builtin blogofobe server. This is only
 # intended to be run in a virtualenv via tox. Selenium isn't working
-# for me in Python3 right now. Blogofile will be run using the
+# for me in Python3 right now. blogofobe will be run using the
 # virtualenv python but selenium will be run with the system python2.
 
 import unittest
@@ -70,14 +70,14 @@ class TestBrowser(unittest.TestCase):
         #Change to that directory just like a user would
         os.chdir(cls.build_path)
         #Initialize and build the site
-        subprocess.Popen(shlex.split("blogofile init blog_unit_test"),
+        subprocess.Popen(shlex.split("blogofobe init blog_unit_test"),
                          stdout=subprocess.PIPE).wait()
-        subprocess.Popen(shlex.split("blogofile build"),
+        subprocess.Popen(shlex.split("blogofobe build"),
                          stdout=subprocess.PIPE).wait()
         #Start the server
         cls.port = 42042
         cls.url = u"http://localhost:{0}".format(cls.port)
-        cls.server = subprocess.Popen(shlex.split("blogofile serve {0}".
+        cls.server = subprocess.Popen(shlex.split("blogofobe serve {0}".
                                                    format(cls.port)),
                                       stdout=subprocess.PIPE)
         cls.chrome = webdriver.Chrome()
@@ -153,7 +153,7 @@ class TestBrowser(unittest.TestCase):
 
     def testMarkdownTemplate(self):
         self.chrome.get(self.url+"/markdown_test.html")
-        self.assertIn("<a href=\"http://www.blogofile.com\">This is a link</a>", self.chrome.get_page_source())
+        self.assertIn("<a href=\"http://www.blogofobe.com\">This is a link</a>", self.chrome.get_page_source())
 
     def testPluginFilters(self):
         self.chrome.get(self.url+"/filter_test.html")
