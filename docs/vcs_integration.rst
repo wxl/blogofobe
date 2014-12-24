@@ -13,7 +13,7 @@ You might not know it yet, but you want your blog under a `Version Control Syste
 * The ability to work from any computer, without getting worried if you're working on the latest version or not.
 * Automatic Deployment.
 
-Automatic what? Even if you're a veteran to VCS, you may not realize that a VCS can do a lot more for you than just provide a place for you to dump your files. You can have your favorite VCS build and deploy your Blogofile based site for you everytime you commit new changes.
+Automatic what? Even if you're a veteran to VCS, you may not realize that a VCS can do a lot more for you than just provide a place for you to dump your files. You can have your favorite VCS build and deploy your blogofobe based site for you everytime you commit new changes.
 
 So why are you procrastinating? Get `git`_.
 
@@ -34,18 +34,18 @@ Create a new ``post-recieve`` hook in your git repo by creating the file ``/path
  unset GIT_DIR
  cd /path/to/checkout_place
  git pull
- blogofile build
+ blogofobe build
 
 Configure your webserver to host your website out of ``/path/to/checkout_place/_site``.
 
-Now whenever you ``git push`` to your webhost, your webserver should get automatically rebuilt. If Blogofile outputs any errors, you'll see them on your screen.
+Now whenever you ``git push`` to your webhost, your webserver should get automatically rebuilt. If blogofobe outputs any errors, you'll see them on your screen.
 
 Other VCS solutions
 -------------------
 
-Most VCS should have support for a post recieve hook. If you create something cool in your own VCS of choice, let the `blogofile discussion group <http://groups.google.com/group/blogofile-discuss>`_ know and we'll add it to this document.
+Most VCS should have support for a post recieve hook. If you create something cool in your own VCS of choice, let the `blogofobe discussion group <http://groups.google.com/group/blogofobe-discuss>`_ know and we'll add it to this document.
 
-OJ wrote up how to do `something similar with mercurial <http://groups.google.com/group/blogofile-discuss/browse_frm/thread/e03f942b3655218e>`_.
+OJ wrote up how to do `something similar with mercurial <http://groups.google.com/group/blogofobe-discuss/browse_frm/thread/e03f942b3655218e>`_.
 
 .. rubric:: Footnotes
 

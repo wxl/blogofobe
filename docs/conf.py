@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# blogofile documentation build configuration file, created by
+# blogofobe documentation build configuration file, created by
 # sphinx-quickstart on Mon Aug 17 21:05:43 2009.
 #
 # This file is execfile()d with the current directory set to its
@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'blogofile'
-copyright = '2012, blogofile Contributors'
+project = 'blogofobe'
+copyright = '2012, blogofobe Contributors'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -165,7 +165,7 @@ html_static_path = []
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'blogofiledoc'
+htmlhelp_basename = 'blogofobedoc'
 
 # -- Options for LaTeX output -------------------------------------------------
 
@@ -185,8 +185,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual])
 latex_documents = [
-  ('index', 'blogofile.tex', 'blogofile Documentation',
-   'blogofile Contributors', 'manual'),
+  ('index', 'blogofobe.tex', 'blogofobe Documentation',
+   'blogofobe Contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -215,8 +215,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'blogofile', 'blogofile Documentation',
-     ['blogofile Contributors'], 1)
+    ('index', 'blogofobe', 'blogofobe Documentation',
+     ['blogofobe Contributors'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -229,8 +229,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'blogofile', 'blogofile Documentation',
-   'blogofile Contributors', 'blogofile', 'One line description of project.',
+  ('index', 'blogofobe', 'blogofobe Documentation',
+   'blogofobe Contributors', 'blogofobe', 'One line description of project.',
    'Miscellaneous'),
 ]
 

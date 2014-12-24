@@ -3,9 +3,9 @@
 Templates
 *********
 
-Templates are at the very heart of Blogofile; they control every aspect of how the site is structured. Blogofile uses the `Mako`_ templating engine which has an active community and `great documentation`_. Blogofile doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it.
+Templates are at the very heart of blogofobe; they control every aspect of how the site is structured. blogofobe uses the `Mako`_ templating engine which has an active community and `great documentation`_. blogofobe doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it.
 
-Blogofile makes a distinction between two basic kinds of templates:
+blogofobe makes a distinction between two basic kinds of templates:
 
 * **Page** templates
 * **Reusable** templates
@@ -19,7 +19,7 @@ A Simple Example Using Just Mako
 
 It would be redundant to describe all the things you can do with Mako when `great documentation`_ already exists, but a few simple examples of templates are in order.
 
-The first thing a website needs is an index or 'home' page. Here's how you create one in blogofile:
+The first thing a website needs is an index or 'home' page. Here's how you create one in blogofobe:
 
 In the root of your source directory create a file called ``index.html.mako``::
 
@@ -66,12 +66,12 @@ One special reference is also made to ``${next.body()}``. This deposits the cont
     </body>
   </html>
 
-.. _adding-blogofile-features-to-our-templates:
+.. _adding-blogofobe-features-to-our-templates:
 
-Adding Blogofile Features To Our Templates
+Adding blogofobe Features To Our Templates
 ------------------------------------------
 
-In the last section we introduced a simple template called ``index.html.mako``. This template is the home page of our site, and so far only includes regular mako functionality. Now let's introduce some Blogofile action! 
+In the last section we introduced a simple template called ``index.html.mako``. This template is the home page of our site, and so far only includes regular mako functionality. Now let's introduce some blogofobe action! 
 
 Let's say we want to include on our home page a list of the 5 most recent posts from our blog. As long as :ref:`config-blog-enabled` is turned on, each template can get access to our blog posts through a cache object called ``bf``. We can modify our ``index.html.mako`` to get the list of recent posts::
 
@@ -84,7 +84,7 @@ Let's say we want to include on our home page a list of the 5 most recent posts 
   % endfor
   </ul>
 
-If you're familiar with for-loops in Python, this should look somewhat similar. We create an unordered list tag and inside that list we iterate over a special Blogofile object containing all of our posts. We limit ourselves to the first 5 posts by slicing the list of posts from 0 to 5. 
+If you're familiar with for-loops in Python, this should look somewhat similar. We create an unordered list tag and inside that list we iterate over a special blogofobe object containing all of our posts. We limit ourselves to the first 5 posts by slicing the list of posts from 0 to 5. 
 
 Each post contains various metadata (see :ref:`posts`) about the post. In this example we are interested in two things: the relative URL to the permalinked post as well as the title of the post. We create the anchor containing the relative URL ``${post.path}`` and we name the anchor the same as the post ``${post.title}``. The rendered HTML file will now look something like this::
 
@@ -112,16 +112,16 @@ Each post contains various metadata (see :ref:`posts`) about the post. In this e
 Template Environment
 --------------------
 
-In the last section we introduced a special Blogofile object called ``bf``. This object is a gateway to all things related to Blogofile and is provided to all your templates.
+In the last section we introduced a special blogofobe object called ``bf``. This object is a gateway to all things related to blogofobe and is provided to all your templates.
 
 You can also import it into your :ref:`Controllers` and :ref:`Filters`::
 
-    import blogofile_bf as bf
+    import blogofobe_bf as bf
 
-Blogofile modules
+blogofobe modules
 +++++++++++++++++
 
-``bf`` holds all of the core Blogofile modules, for example:
+``bf`` holds all of the core blogofobe modules, for example:
  * ``bf.util``
  * ``bf.config``
  * ``bf.writer``
@@ -159,4 +159,4 @@ When a template is being rendered, it's sometimes useful to be able to maintain 
 
 .. _Mako syntax: http://www.makotemplates.org/docs/syntax.html#syntax_expression
 
-.. _HierarchicalCache: http://github.com/EnigmaCurry/blogofile/blob/master/blogofile/cache.py#L22
+.. _HierarchicalCache: http://github.com/EnigmaCurry/blogofobe/blob/master/blogofobe/cache.py#L22

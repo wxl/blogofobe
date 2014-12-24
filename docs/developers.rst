@@ -3,25 +3,25 @@
 For Developers
 ==============
 
-If you would like to contribute to the Blogofile project,
+If you would like to contribute to the blogofobe project,
 these instructions should help you get started.
 Patches, documentation improvements, bug reports, and feature requests
 are all welcome through the GitHub projects:
 
-* `Blogofile on GitHub`_
-* `blogofile_blog on GitHub`_
+* `blogofobe on GitHub`_
+* `blogofobe_blog on GitHub`_
 
 Contributions in the form of patches or pull requests are easier to integrate
 and will receive priority attention.
 
-.. _Blogofile on GitHub: https://github.com/EnigmaCurry/blogofile
-.. _blogofile_blog on GitHub: https://github.com/EnigmaCurry/blogofile_blog
+.. _blogofobe on GitHub: https://github.com/wxl/blogofobe
+.. _blogofobe_blog on GitHub: https://github.com/wxl/blogofobe_blog
 
 
 Python Versions
 ---------------
 
-Blogofile is developed under Python_ 3.2
+blogofobe is developed under Python_ 3.2
 and tested with Python 2.6, 2.7, 3.2, and 3.3.
 
 .. _Python: http://www.python.org/
@@ -33,36 +33,36 @@ Setting Up a Development Sandbox
 --------------------------------
 
 Using a Python virtualenv_ is strongly recommended to segregate
-Blogofile and the packages it depends on from your system Python
+blogofobe and the packages it depends on from your system Python
 installation.
 
 .. _virtualenv: http://www.virtualenv.org/
 
 Create a virtualenv and activate it::
 
-  $ virtualenv blogofile-dev
-  $ source blogofile-dev/bin/activate
+  $ virtualenv blogofobe-dev
+  $ source blogofobe-dev/bin/activate
 
-Grab the Blogofile core,
-and the blogofile_blog reference plugin repos from GitHub::
+Grab the blogofobe core,
+and the blogofobe_blog reference plugin repos from GitHub::
 
-  (blogofile-dev)$ cd blogofile-dev
-  (blogofile-dev)$ git clone git://github.com/EnigmaCurry/blogofile.git
-  (blogofile-dev)$ git clone git://github.com/EnigmaCurry/blogofile_blog.git
+  (blogofobe-dev)$ cd blogofobe-dev
+  (blogofobe-dev)$ git clone git://github.com/wxl/blogofobe.git
+  (blogofobe-dev)$ git clone git://github.com/wxl/blogofobe_blog.git
 
 Install the packages for development,
 and install the extra packages that are used to build the docs
 and run the test suite::
 
-  (blogofile-dev)$ pip install -e blogofile
-  (blogofile-dev)$ pip install -e blogofile_blog
-  (blogofile-dev)$ pip install -r blogofile/requirements/develop.txt
+  (blogofobe-dev)$ pip install -e blogofobe
+  (blogofobe-dev)$ pip install -e blogofobe_blog
+  (blogofobe-dev)$ pip install -r blogofobe/requirements/develop.txt
 
 
 Building Documentation
 ----------------------
 
-The Blogofile docs are written with reStructuredText_ markup
+The blogofobe docs are written with reStructuredText_ markup
 and built using Sphinx_.
 Sphinx and its dependencies are installed  as part of the
 `development sandbox setup <SettingUpADevelopmentSandbox-section>`_.
@@ -70,10 +70,10 @@ Sphinx and its dependencies are installed  as part of the
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 .. _Sphinx: http://sphinx.pocoo.org/
 
-The :file:`blogofile/docs/` directory includes a :file:`Makefile` to help
+The :file:`blogofobe/docs/` directory includes a :file:`Makefile` to help
 build the docs::
 
-  (blogofile-dev)$ (cd blogofile/docs && make html)
+  (blogofobe-dev)$ (cd blogofobe/docs && make html)
   sphinx-build -b html -d _build/doctrees  . _build/html
   Making output directory...
   Running Sphinx v1.1.3
@@ -94,22 +94,22 @@ build the docs::
 
   Build finished. The HTML pages are in _build/html.
 
-The output version of the docs ends up in :file:`blogofile/docs/build/html`
+The output version of the docs ends up in :file:`blogofobe/docs/build/html`
 in your development sandbox.
 
 
 Running Tests
 -------------
 
-The test suites for Blogofile and blogofile_blog use tox_.
+The test suites for blogofobe and blogofobe_blog use tox_.
 Tox and its dependencies are installed as part of the
 `development sandbox setup <SettingUpADevelopmentSandbox-section>`_.
 
 .. _tox: http://tox.testrun.org/
 
 To run the tests under Python 2.6, 2.7, and 3.2,
-run :command:`tox` in the top level :file:`blogofile/`
-and :file:`blogofile_blog/` directories.
+run :command:`tox` in the top level :file:`blogofobe/`
+and :file:`blogofobe_blog/` directories.
 
 To run tests under a single version of Python, specify the appropriate
 environment when running tox::
@@ -117,17 +117,17 @@ environment when running tox::
   $ tox -e py27
 
 Add new tests by modifying an existing file or adding a new one in the
-:file:`blogofile/tests/` and :file:`blogofile_blog/tests/` directories.
+:file:`blogofobe/tests/` and :file:`blogofobe_blog/tests/` directories.
 
 
 Releases
 --------
 
-Blogofile and blogofile_blog releases are hosted on PyPI and can be
+blogofobe and blogofobe_blog releases are hosted on PyPI and can be
 downloaded from:
 
-* http://pypi.python.org/pypi/blogofile
-* http://pypi.python.org/pypi/blogofile_blog
+* http://pypi.python.org/pypi/blogofobe
+* http://pypi.python.org/pypi/blogofobe_blog
 
 
 Source Code
@@ -135,8 +135,8 @@ Source Code
 
 The source repositories are hosted on GitHub:
 
-* https://github.com/EnigmaCurry/blogofile
-* https://github.com/EnigmaCurry/blogofile_blog
+* https://github.com/wxl/blogofobe
+* https://github.com/wxl/blogofobe_blog
 
 
 Reporting Bugs
@@ -144,5 +144,5 @@ Reporting Bugs
 
 Please report bugs through the GitHub projects:
 
-* https://github.com/EnigmaCurry/blogofile/issues
-* https://github.com/EnigmaCurry/blogofile_blog/issues
+* https://github.com/wxl/blogofobe/issues
+* https://github.com/wxl/blogofobe_blog/issues

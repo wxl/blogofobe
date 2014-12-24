@@ -3,7 +3,7 @@
 Posts
 *****
 
-Posts are interpreted by the blog controller that you get when you instantiate the simple_blog; they have no particular meaning to the core runtime of Blogofile. If you wanted, you could reimplement the blog controller yourself and use whatever post formatting you wished. It's expected that most users will just use the default blog controller, so this Post documentation is here for convenience.
+Posts are interpreted by the blog controller that you get when you instantiate the simple_blog; they have no particular meaning to the core runtime of blogofobe. If you wanted, you could reimplement the blog controller yourself and use whatever post formatting you wished. It's expected that most users will just use the default blog controller, so this Post documentation is here for convenience.
 
 Blog posts go inside the **_posts** directory. Without the blog controller enabled, the **_posts** directory is ignored because it starts with an underscore.
 
@@ -16,14 +16,14 @@ Here's an example post::
  ---
  categories: Category One, Category Two
  date: 2009/08/18 13:09:00
- permalink: http://www.blogofile.com/2009/08/18/first-post
+ permalink: http://www.blogofobe.com/2009/08/18/first-post
  title: First Post
  ---
  This is the first post 
 
 The post is divided into two parts, the YAML header and the post content.
 
-You can see more `examples of Blogofile posts <http://www.blogofile.com/demo/sample_posts.html>`_ on the project site. 
+You can see more `examples of blogofobe posts <http://www.blogofobe.com/demo/sample_posts.html>`_ on the project site. 
 
 .. _post-yaml:
 
@@ -62,7 +62,7 @@ The `YAML`_ portion is between the two ``---`` lines, and it describes all of th
 * **filename**
     Reserved internally.
 
-This list is also defined in the blogofile source code under ``blogofile.post.reserved_field_names`` and can be accessed as a dictionary at runtime.
+This list is also defined in the blogofobe source code under ``blogofobe.post.reserved_field_names`` and can be accessed as a dictionary at runtime.
 
 Note that `YAML syntax rules`_ apply to header fields.
 For instance,
@@ -77,7 +77,7 @@ you must enclose the entire title in double quotes (").
 
 Post Content
 ------------
-The post content is written using a markup language, currently Blogofile supports several to choose from:
+The post content is written using a markup language, currently blogofobe supports several to choose from:
 
 * `Markdown`_ (files end in .markdown)
 * `Textile`_ (files end in .textile)
@@ -91,7 +91,7 @@ The content of the post goes directly after the YAML portion and uses whatever m
 Referencing posts in templates
 ------------------------------
 
-All the posts are stored in a cache object called ``bf``. This object is exposed to all templates and you can reference it directly with ``${bf.config.blog.posts}``. They are ordered sequentially by date. See :ref:`adding-blogofile-features-to-our-templates` for an example.
+All the posts are stored in a cache object called ``bf``. This object is exposed to all templates and you can reference it directly with ``${bf.config.blog.posts}``. They are ordered sequentially by date. See :ref:`adding-blogofobe-features-to-our-templates` for an example.
 
 .. _YAML: http://en.wikipedia.org/wiki/YAML
 

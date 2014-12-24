@@ -11,9 +11,9 @@ Controllers are used when you want to create a whole chunk of your site dynamica
 * An RSS/Atom feed generator for all posts, or for a single category.
 * A permalink page for all blog posts.
 
-All of these are pretty much a necessity for a blog engine, but none of these are included within the core of Blogofile itself. One of Blogofile's core principles is to remain light, configurable, and to make little assumption about how a user's site should behave. All of these blog specific tasks are relegated to a type of plugin system called controllers so that they can be tailored to each individual's tastes as well as leave room for entirely new types of controllers written by the user.
+All of these are pretty much a necessity for a blog engine, but none of these are included within the core of blogofobe itself. One of blogofobe's core principles is to remain light, configurable, and to make little assumption about how a user's site should behave. All of these blog specific tasks are relegated to a type of plugin system called controllers so that they can be tailored to each individual's tastes as well as leave room for entirely new types of controllers written by the user.
 
-The simple_blog sources (which you can obtain by running ``blogofile init simple_blog``) include all of these controllers in the ``_controllers`` directory. But let's look at an even simpler example for the purposes of this tutorial.
+The simple_blog sources (which you can obtain by running ``blogofobe init simple_blog``) include all of these controllers in the ``_controllers`` directory. But let's look at an even simpler example for the purposes of this tutorial.
 
 .. _controller-simple-example:
 
@@ -24,13 +24,13 @@ Suppose you wanted to create a simple photo gallery with a comments page for eac
 
 First create the controller called ``_controllers/photo_gallery.py``::
 
- # A stupid little photo gallery for Blogofile.
+ # A stupid little photo gallery for blogofobe.
 
  # Read all the photos in the /photos directory and create a page for each along
  # with Disqus comments.
  
  import os
- from blogofile.cache import bf
+ from blogofobe.cache import bf
  
  config = {"name"        : "Photo Gallery",
            "description" : "A very simplistic photo gallery, used as an example",
@@ -58,7 +58,7 @@ First create the controller called ``_controllers/photo_gallery.py``::
      bf.writer.materialize_template("photo_index.mako", 
                  (photos_dir,"index.html"), {"photos":photos})
  
-When a controller is loaded, the first thing Blogofile looks for is a ``run()`` method to invoke. It never takes any arguments, each controller is expected to know what it's going to do of it's own accord. 
+When a controller is loaded, the first thing blogofobe looks for is a ``run()`` method to invoke. It never takes any arguments, each controller is expected to know what it's going to do of it's own accord. 
 
 In this example the ``run()`` method does all the work:
 
@@ -98,7 +98,7 @@ The ``write_photo_index()`` method references a reusable template residing in ``
 
 The controller passes a single variable: ``photos``, which is a sequence of all the photos filenames. In a more complete photo gallery, one might pass a sequence of objects that had references to the full jpg as well as a thumbnail and EXIF data.
 
-This example is included in the `blogofile.com sources <http://www.github.com/EnigmaCurry/blogofile.com>`_ and can also `be viewed live <http://www.blogofile.com/demo/photo_gallery>`_.
+This example is included in the `blogofobe.com sources <http://www.github.com/EnigmaCurry/blogofobe.com>`_ and can also `be viewed live <http://www.blogofobe.com/demo/photo_gallery>`_.
 
 Controller structure
 --------------------

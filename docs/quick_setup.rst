@@ -2,46 +2,41 @@ A Quick Tutorial
 ****************
 
 .. note::
-   This documents the 0.8 development version of Blogofile_
-   (also known as the *plugins* branch).
-   There are also `docs for 0.7.1`_, the current stable release.
-
-.. _Blogofile: http://blogofile.com/
-.. _docs for 0.7.1: http://blogofile.readthedocs.org/en/0.7.1docs/
+   This documents blogofobe's current stable release.
 
 Ok, if you're impatient, this is the short *short* [#f1]_ version of
-getting setup with blogofile.
+getting setup with blogofobe.
 
-* Install Blogofile and the blogofile_blog plugin,
-  (see :ref:`install-blogofile`).
+* Install blogofobe and the blogofobe_blog plugin,
+  (see :ref:`install-blogofobe`).
   Use a Python virtualenv_ or :command:`sudo` as you wish.
 
   ::
 
-    git clone git://github.com/EnigmaCurry/blogofile.git
-    git clone git://github.com/EnigmaCurry/blogofile_blog.git
-    cd blogofile
+    git clone git://github.com/wxl/blogofobe.git
+    git clone git://github.com/wxl/blogofobe_blog.git
+    cd blogofobe
     python setup.py install
-    cd ../blogofile_blog
+    cd ../blogofobe_blog
     python setup.py install
 
   .. _virtualenv: http://www.virtualenv.org/
 
 * Initialize a blog site in a directory call :file:`mysite`::
 
-    blogofile init mysite blog
+    blogofobe init mysite blog
 
 * Build the site::
 
-    blogofile build -s mysite
+    blogofobe build -s mysite
 
 * Serve the site::
 
-    blogofile serve -s mysite
+    blogofobe serve -s mysite
 
 * Open your web browser to http://localhost:8080 to see the rendered site.
 
-* Explore the :command:`blogofile` commands with :command:`blogofile help`.
+* Explore the :command:`blogofobe` commands with :command:`blogofobe help`.
 
 * Create some post files in the :file:`_posts` directory (see :ref:`posts`)
 

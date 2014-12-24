@@ -2,7 +2,7 @@
 
 Filters
 ******************************
-Filters are Blogofile's text processor plugin system. They create callable functions in templates and blog posts that can perform manipulation on a block of text. Ideas for filters:
+Filters are blogofobe's text processor plugin system. They create callable functions in templates and blog posts that can perform manipulation on a block of text. Ideas for filters:
 
 * Markup languages.
 * A code syntax highlighter.
@@ -73,7 +73,7 @@ Filter chains can be applied to blog posts in the post YAML::
 
  ---
  date: 2009/12/01 11:17:00
- permalink: http://www.blogofile.com/whatever
+ permalink: http://www.blogofobe.com/whatever
  title: A markdown formatted test post
  filter: markdown, playnice
  ---
@@ -81,7 +81,7 @@ Filter chains can be applied to blog posts in the post YAML::
 
 Filters on blog posts are applied to the entire blog post; you cannot apply a filter to only a portion of the text like you can with templates. However, there is nothing preventing you from writing a filter that looks for special syntax in your posts and filters selectively (the syntax_highlight filter from simple_blog does exactly this). This allows for more end user customizability. 
 
-If no filter is specified for your post, Blogofile looks at a config option called :ref:`config-blog-post-default-filters` which maps the file extension of the post file to a filter chain. Defaults include ``markdown`` and ``textile``.
+If no filter is specified for your post, blogofobe looks at a config option called :ref:`config-blog-post-default-filters` which maps the file extension of the post file to a filter chain. Defaults include ``markdown`` and ``textile``.
 
 You can turn off all filters for the post, including the default ones, by specifing a filter chain of ``none``.
 

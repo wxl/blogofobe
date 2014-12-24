@@ -1,7 +1,7 @@
-Migrating Existing Blogs to Blogofile
+Migrating Existing Blogs to blogofobe
 =====================================
 
-Unless you're starting a brand new blog from scratch, you're probably going to want to migrate an existing blog to Blogofile. When migrating, you have to consider several things:
+Unless you're starting a brand new blog from scratch, you're probably going to want to migrate an existing blog to blogofobe. When migrating, you have to consider several things:
 
  * Migrating existing blog posts.
  * Migrating existing blog comments.
@@ -15,14 +15,14 @@ Comments
 
 Before you bring your Wordpress blog offline, install the `Disqus wordpress plugin`_. With this plugin, you can export all your comments from your wordpress database offsite into your Disqus account.
 
-In your blogofile config file, set the :ref:`config-disqus-enabled` and :ref:`config-disqus-name` settings appropriately.
+In your blogofobe config file, set the :ref:`config-disqus-enabled` and :ref:`config-disqus-name` settings appropriately.
 
 Posts
 +++++
 
 Download the converter script:
 
-* `wordpress2blogofile.py`_
+* `wordpress2blogofobe.py`_
 
 Install SQL Alchemy::
 
@@ -41,9 +41,9 @@ Edit ``wordpress_schema.py``:
 
 In a clean directory run the export script::
 
- python wordpress2blogofile.py
+ python wordpress2blogofobe.py
 
-If everything worked, you should now have a ``_posts`` directory containing valid Blogofile format posts which you can copy to your blogofile directory.
+If everything worked, you should now have a ``_posts`` directory containing valid blogofobe format posts which you can copy to your blogofobe directory.
 
 Permalinks
 ++++++++++
@@ -58,7 +58,7 @@ Moveable Type
 to be written.
 
 .. _Disqus wordpress plugin: http://wordpress.org/extend/plugins/disqus-comment-system
-.. _wordpress2blogofile.py: http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress2blogofile.py
+.. _wordpress2blogofobe.py: http://github.com/EnigmaCurry/blogofobe/raw/master/converters/wordpress2blogofobe.py
 .. _MySQLdb: http://sourceforge.net/projects/mysql-python/
 .. _DBAPI: http://www.sqlalchemy.org/docs/05/dbengine.html#supported-dbapis
 .. _SQL Alchemy docs: http://www.sqlalchemy.org/docs/05/dbengine.html#create-engine-url-arguments
