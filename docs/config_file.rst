@@ -3,7 +3,7 @@
 Configuration File
 ==================
 
-Blogofile looks for a file called ``_config.py`` in the root of your source directory; this is your site's main configuration file. Blogofile tries to use sensible default values for anything you don't configure explicitly in this file. Although every site must have a ``_config.py``, it can start out completely blank.
+blogofobe looks for a file called ``_config.py`` in the root of your source directory; this is your site's main configuration file. blogofobe tries to use sensible default values for anything you don't configure explicitly in this file. Although every site must have a ``_config.py``, it can start out completely blank.
 
 ``_config.py`` is just regular `Python`_ source code. If you don't know any Python, don't worry, there's actually very little you need to change in this file to get started.
 
@@ -12,7 +12,7 @@ Blogofile looks for a file called ``_config.py`` in the root of your source dire
 Context of _config.py
 |||||||||||||||||||||
 
-``_config.py`` is run within a context that is prepared by Blogofile before executing. This context includes the following objects:
+``_config.py`` is run within a context that is prepared by blogofobe before executing. This context includes the following objects:
 
 * **controllers** - Settings for each controller (See :ref:`controllers`).
 * **filters** - Settings for each filter (See :ref:`filters`).
@@ -20,7 +20,7 @@ Context of _config.py
 
 All of these are instances of the `HierarchicalCache`_ class. `HierarchicalCache`_ objects behave a bit differently than typical Python objects: accessed attributes that do not exist, do not raise an `AttributeError`_. Instead, they instantiate the non-existing attribute as a nested `HierarchicalCache`_ object.
 
-This style of configuration provides a seperate namespace for each feature of your blogofile site, and also allows for Blogofile to contain configuration settings for controllers or filters that may or may not be currently installed. For example, your ``_config.py`` might have the following setting for a photo gallery controller::
+This style of configuration provides a seperate namespace for each feature of your blogofobe site, and also allows for blogofobe to contain configuration settings for controllers or filters that may or may not be currently installed. For example, your ``_config.py`` might have the following setting for a photo gallery controller::
 
   controllers.photo_gallery.albums.photos_per_page = 5
 
@@ -34,7 +34,7 @@ Because this setting is contained in a `HierarchicalCache`_ object, if the photo
 Site Configuration
 ||||||||||||||||||
 
-In Blogofile, the "site" corresponds with the ``_site`` directory that blogofile builds. Even if your site is primarily used as a blog, think of the "site" as the parent of the blog. The site has it's own namespace within ``_config.py`` called ``site``.
+In blogofobe, the "site" corresponds with the ``_site`` directory that blogofobe builds. Even if your site is primarily used as a blog, think of the "site" as the parent of the blog. The site has it's own namespace within ``_config.py`` called ``site``.
 
 .. _config-site-url:
 
@@ -42,7 +42,7 @@ site.url
 ++++++++
 String
 
-This is the root URL for your website. This is the URL that your blogofile site will be hosted at::
+This is the root URL for your website. This is the URL that your blogofobe site will be hosted at::
 
     site.url = "http://www.xkcd.com"
 
@@ -74,9 +74,9 @@ This is a list of regular expressions that describe paths to ignore when process
 Blog Configuration
 ||||||||||||||||||
 
-The core of Blogofile actually does not know what a blog is. Blogofile itself just provides a runtime environment for templates, controllers and filters. A Blogofile blog is actually built by creating a blog controller (see :ref:`Controllers`.) A default implementation of a blog controller is provided with the Blogofile ``simple_blog`` template and should be sufficient for most users.
+The core of blogofobe actually does not know what a blog is. blogofobe itself just provides a runtime environment for templates, controllers and filters. A blogofobe blog is actually built by creating a blog controller (see :ref:`Controllers`.) A default implementation of a blog controller is provided with the blogofobe ``simple_blog`` template and should be sufficient for most users.
 
-All controllers in Blogofile have their own seperate namespace in ``_config.py`` under ``controllers``. For convenience, you would usually reference the blog controller like so in ``_config.py``::
+All controllers in blogofobe have their own seperate namespace in ``_config.py`` under ``controllers``. For convenience, you would usually reference the blog controller like so in ``_config.py``::
 
     blog = controllers.blog
 
@@ -86,7 +86,7 @@ blog.enabled
 ++++++++++++
 Boolean
   
-This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. If this is set to True, Blogofile requires several blog specific templates to exist in the ``_templates`` directory as described in :ref:`required-templates`::
+This turns on/off the blog feature. blogofobe is obviously geared toward sites that have blogs, but you don't *need* to have one. If this is set to True, blogofobe requires several blog specific templates to exist in the ``_templates`` directory as described in :ref:`required-templates`::
 
     blog.enabled = True
 
@@ -193,7 +193,7 @@ blog.custom_index
 +++++++++++++++++
 Boolean
 
-When you configure :ref:`config-blog-path`, Blogofile by default writes a chronological listing of the latest blog entries at that location. With this option you can turn that behaviour off and your index.html.mako file in that same location will be your own custom template::
+When you configure :ref:`config-blog-path`, blogofobe by default writes a chronological listing of the latest blog entries at that location. With this option you can turn that behaviour off and your index.html.mako file in that same location will be your own custom template::
 
     blog.custom_index = False
 
@@ -284,6 +284,6 @@ This is a function that gets run after the _site directory is built OR whenever 
 
 .. _Python: http://www.python.org
 
-.. _HierarchicalCache: http://github.com/EnigmaCurry/blogofile/blob/master/blogofile/cache.py#L22
+.. _HierarchicalCache: http://github.com/EnigmaCurry/blogofobe/blob/master/blogofobe/cache.py#L22
 
 .. _AttributeError: http://docs.python.org/library/exceptions.html#exceptions.AttributeError
