@@ -15,12 +15,12 @@ from . import plugin
 from . import filter as _filter
 from .cache import HierarchicalCache as HC
 # TODO: This import MUST come after cache is imported; that's too brittle!
-import blogofile_bf as bf
+import blogofobe_bf as bf
 
 
-logger = logging.getLogger("blogofile.config")
+logger = logging.getLogger("blogofobe.config")
 
-bf.config = sys.modules['blogofile.config']
+bf.config = sys.modules['blogofobe.config']
 
 site = cache.HierarchicalCache()
 controllers = cache.HierarchicalCache()
@@ -33,7 +33,7 @@ default_config_path = os.path.join(
 
 
 def init_interactive(args=None):
-    """Reset the blogofile cache objects, and load the configuration.
+    """Reset the blogofobe cache objects, and load the configuration.
 
     The user's _config.py is always loaded from the current directory
     because we assume that the function/method that calls this has
@@ -48,7 +48,7 @@ def init_interactive(args=None):
     except IOError:
         sys.stderr.write("No configuration found in source dir: {0}\n"
                          .format(args.src_dir))
-        sys.stderr.write("Want to make a new site? Try `blogofile init`\n")
+        sys.stderr.write("Want to make a new site? Try `blogofobe init`\n")
         sys.exit(1)
 
 

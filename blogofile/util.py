@@ -15,10 +15,10 @@ from markupsafe import Markup
 import six
 from unidecode import unidecode
 from .cache import bf
-bf.util = sys.modules['blogofile.util']
+bf.util = sys.modules['blogofobe.util']
 
 
-logger = logging.getLogger("blogofile.util")
+logger = logging.getLogger("blogofobe.util")
 
 # Word separators and punctuation for slug creation
 PUNCT_RE = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
@@ -126,7 +126,7 @@ def site_path_helper(*parts, **kwargs):
 def fs_site_path_helper(*parts):
     """Build a path relative to the built site inside the _site dir.
 
-    >>> bf.config.site.url = "http://www.blogofile.com/ryan/site1"
+    >>> bf.config.site.url = "http://www.blogofobe.com/ryan/site1"
     >>> fs_site_path_helper()
     ''
     >>> fs_site_path_helper("/blog","/category","stuff")

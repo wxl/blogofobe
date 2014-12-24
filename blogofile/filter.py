@@ -7,13 +7,13 @@ import imp
 import uuid
 
 
-logger = logging.getLogger("blogofile.filter")
+logger = logging.getLogger("blogofobe.filter")
 
 from .cache import bf
 from .cache import HierarchicalCache
 from . import exception
 
-bf.filter = sys.modules['blogofile.filter']
+bf.filter = sys.modules['blogofobe.filter']
 
 default_filter_config = {"name": None,
                          "description": None,
@@ -153,7 +153,7 @@ def load_filter(name, module_path, namespace=None):
                 namespace[alias] = namespace[name]
         except:
             pass
-        # Load the default blogofile config for filters:
+        # Load the default blogofobe config for filters:
         for k, v in list(default_filter_config.items()):
             namespace[name][k] = v
         # Load any filter defined defaults:

@@ -58,9 +58,9 @@ import imp
 from .cache import bf
 
 
-bf.controller = sys.modules['blogofile.controller']
+bf.controller = sys.modules['blogofobe.controller']
 
-logger = logging.getLogger("blogofile.controller")
+logger = logging.getLogger("blogofobe.controller")
 
 default_controller_config = {"priority": 50.0,
                              "enabled": False}
@@ -132,7 +132,7 @@ def load_controller(name, namespace, directory="_controllers", defaults={},
             raise
         # Remember the actual imported module
         namespace[name].mod = controller
-        # Load the blogofile defaults for controllers:
+        # Load the blogofobe defaults for controllers:
         for k, v in list(default_controller_config.items()):
             namespace[name][k] = v
         # Load provided defaults:
@@ -162,7 +162,7 @@ def load_controller(name, namespace, directory="_controllers", defaults={},
             except AttributeError:
                 pass
         # Provide every controller with a logger:
-        c_logger = logging.getLogger("blogofile.controllers." + name)
+        c_logger = logging.getLogger("blogofobe.controllers." + name)
         namespace[name]["logger"] = c_logger
         return namespace[name].mod
     finally:

@@ -25,10 +25,10 @@ from .cache import bf
 from .cache import Cache
 
 
-bf.template = sys.modules['blogofile.template']
+bf.template = sys.modules['blogofobe.template']
 
 base_template_dir = util.path_join(".", "_templates")
-logger = logging.getLogger("blogofile.template")
+logger = logging.getLogger("blogofobe.template")
 template_content_place_holder = re.compile("~~!`TEMPLATE_CONTENT_HERE`!~~")
 
 

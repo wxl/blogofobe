@@ -96,15 +96,15 @@ class HierarchicalCache(Cache):
         finally:
             Cache.__setitem__(c, key, item)
 
-#The main blogofile cache object, transfers state between templates
+#The main blogofobe cache object, transfers state between templates
 bf = HierarchicalCache()
 
 
 def setup_bf():
     global bf
-    sys.modules['blogofile_bf'] = bf
+    sys.modules['blogofobe_bf'] = bf
     bf.__version__ = bf_version
-    bf.cache = sys.modules['blogofile.cache']
+    bf.cache = sys.modules['blogofobe.cache']
 
 
 def reset_bf(assign_modules=True):

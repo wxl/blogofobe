@@ -20,7 +20,7 @@ from . import plugin
 from . import template
 
 
-logger = logging.getLogger("blogofile.writer")
+logger = logging.getLogger("blogofobe.writer")
 
 
 class Writer(object):
@@ -54,7 +54,7 @@ class Writer(object):
     def __setup_temp_dir(self):
         """Create a directory for temporary data.
         """
-        self.temp_proc_dir = tempfile.mkdtemp(prefix="blogofile_")
+        self.temp_proc_dir = tempfile.mkdtemp(prefix="blogofobe_")
         # Make sure this temp directory is added to each template lookup:
         for engine in self.bf.config.templates.engines.values():
             try:

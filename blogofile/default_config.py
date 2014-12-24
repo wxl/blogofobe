@@ -5,7 +5,7 @@
 # This is the canonical _config.py with every single default setting.
 #
 # Don't edit this file directly; create your own _config.py (from
-# scratch or using 'blogofile init') and your settings will override
+# scratch or using 'blogofobe init') and your settings will override
 # these defaults.
 #
 ######################################################################
@@ -16,9 +16,9 @@
 ######################################################################
 ## site.url -- Your site's full URL
 # Your "site" is the same thing as your _site directory.
-#  If you're hosting a blogofile powered site as a subdirectory of a larger
-#  non-blogofile site, then you would set the site_url to the full URL
-#  including that subdirectory: "http://www.yoursite.com/path/to/blogofile-dir"
+#  If you're hosting a blogofobe powered site as a subdirectory of a larger
+#  non-blogofobe site, then you would set the site_url to the full URL
+#  including that subdirectory: "http://www.yoursite.com/path/to/blogofobe-dir"
 site.url = "http://www.example.com"
 
 ## site.author -- Your name, the author of the website.
@@ -57,7 +57,7 @@ site.file_ignore_patterns = [
     ".*/CVS$",
     ]
 
-from blogofile.template import MakoTemplate, JinjaTemplate, \
+from blogofobe.template import MakoTemplate, JinjaTemplate, \
     MarkdownTemplate, RestructuredTextTemplate, TextileTemplate
 #The site base template filename:
 site.base_template = "site.mako"

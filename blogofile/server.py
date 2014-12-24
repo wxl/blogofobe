@@ -10,13 +10,13 @@ except ImportError:
     from urlparse import urlparse       # For Python 3; flake8 ignore # NOQA
 from six.moves import SimpleHTTPServer
 from six.moves import socketserver
-from blogofile import config
-from blogofile import util
+from blogofobe import config
+from blogofobe import util
 from .cache import bf
 
-bf.server = sys.modules['blogofile.server']
+bf.server = sys.modules['blogofobe.server']
 
-logger = logging.getLogger("blogofile.server")
+logger = logging.getLogger("blogofobe.server")
 
 class TCPServer(socketserver.TCPServer):
     """TCP Server that allows address reuse"""

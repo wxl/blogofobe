@@ -14,7 +14,7 @@ from .cache import bf
 from .cache import HierarchicalCache
 
 
-logger = logging.getLogger("blogofile.plugin")
+logger = logging.getLogger("blogofobe.plugin")
 
 default_plugin_config = {
     "priority": 50.0,
@@ -25,7 +25,7 @@ reserved_attributes = ["mod", "filters", "controllers", "site_src"]
 
 
 def iter_plugins():
-    for plugin in pkg_resources.iter_entry_points("blogofile.plugins"):
+    for plugin in pkg_resources.iter_entry_points("blogofobe.plugins"):
         yield plugin.load()
 
 
@@ -122,7 +122,7 @@ class PluginTools(object):
         self.namespace = self.module.config
         self.template_lookup = self._template_lookup()
         self.logger = logging.getLogger(
-            "blogofile.plugins.{0}".format(self.module.__name__))
+            "blogofobe.plugins.{0}".format(self.module.__name__))
 
     def _template_lookup(self):
         return TemplateLookup(

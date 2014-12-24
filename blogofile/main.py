@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""This is Blogofile -- http://www.Blogofile.com
+"""This is Blogofile.
 
 Please take a moment to read LICENSE.txt. It's short.
 """
@@ -29,7 +29,7 @@ from .writer import Writer
 locale.setlocale(locale.LC_ALL, '')
 
 logging.basicConfig()
-logger = logging.getLogger("blogofile")
+logger = logging.getLogger("blogofobe")
 bf.logger = logger
 
 
@@ -59,7 +59,7 @@ def main(argv=[]):
 
 
 def do_debug():
-    """Run blogofile in debug mode depending on the BLOGOFILE_DEBUG environment
+    """Run blogofobe in debug mode depending on the BLOGOFILE_DEBUG environment
     variable:
     If set to "ipython" just start up an embeddable ipython shell at bf.ipshell
     If set to anything else besides 0, setup winpdb environment
@@ -70,9 +70,9 @@ def do_debug():
             bf.ipshell = IPShellEmbed()
         elif os.environ['BLOGOFILE_DEBUG'] != "0":
             print("Running in debug mode, waiting for debugger to connect. "
-                  "Password is set to 'blogofile'")
+                  "Password is set to 'blogofobe'")
             import rpdb2
-            rpdb2.start_embedded_debugger("blogofile")
+            rpdb2.start_embedded_debugger("blogofobe")
     except KeyError:
         # Not running in debug mode
         pass
@@ -100,7 +100,7 @@ def _setup_parser_template():
     parser_template = argparse.ArgumentParser(add_help=False)
     parser_template.add_argument(
         "--version", action="version",
-        version="Blogofile {0} -- http://www.blogofile.com -- {1} {2}"
+        version="Blogofile {0} -- http://www.blogofobe.com -- {1} {2}"
         .format(__version__, platform.python_implementation(),
                 platform.python_version()))
     parser_template.add_argument(
@@ -140,7 +140,7 @@ def _setup_init_parser(subparsers):
     """
     parser = subparsers.add_parser(
         "init",
-        help="Create a new blogofile site.")
+        help="Create a new blogofobe site.")
     parser.add_argument(
         "src_dir",
         help="""
@@ -153,7 +153,7 @@ def _setup_init_parser(subparsers):
         help="""
             Plugin to initialize site from.
             The plugin must already be installed;
-            use `blogofile plugins list` to get the list of installed plugins.
+            use `blogofobe plugins list` to get the list of installed plugins.
             If omitted, a bare site directory will be created.
             """)
     defaults = {
@@ -287,7 +287,7 @@ def do_help(args, parser, subparsers):
 
     if not args.command:
         parser.print_help()
-        print("\nSee 'blogofile help COMMAND' for more information"
+        print("\nSee 'blogofobe help COMMAND' for more information"
               " on a specific command.")
     else:
         # Where did the subparser help text go? Let's get it back.
@@ -314,7 +314,7 @@ def do_help(args, parser, subparsers):
 
 
 def do_init(args):
-    """Initialize a new blogofile site.
+    """Initialize a new blogofobe site.
     """
     # Look before we leap because _init_plugin_site uses
     # shutil.copytree() which requires that the src_dir not already
@@ -338,9 +338,9 @@ def _init_bare_site(src_dir):
     """
     bare_site_config = [
         "# -*- coding: utf-8 -*-\n",
-        "# This is a minimal blogofile config file.\n",
+        "# This is a minimal blogofobe config file.\n",
         "# See the docs for config options\n",
-        "# or run `blogofile help init` to learn how to initialize\n",
+        "# or run `blogofobe help init` to learn how to initialize\n",
         "# a site from a plugin.\n",
     ]
     os.makedirs(src_dir)
@@ -349,13 +349,13 @@ def _init_bare_site(src_dir):
         new_config.writelines(bare_site_config)
     print("_config.py for a bare (do-it-yourself) site "
           "written to {0}\n"
-          "If you were expecting more, please see `blogofile init -h`"
+          "If you were expecting more, please see `blogofobe init -h`"
           .format(src_dir))
 
 
 def _init_plugin_site(args):
     """Initialize the site directory with the approprate files from an
-    installed blogofile plugin.
+    installed blogofobe plugin.
 
     Copy everything except the _controllers, _filters, and _templates
     directories from the plugin's site_src directory.
@@ -428,7 +428,7 @@ def do_info(args):
     """Print some information about the Blogofile installation and the
     current site.
     """
-    print("This is Blogofile (version {0}) -- http://www.blogofile.com"
+    print("This is Blogofile (version {0}) -- http://www.blogofobe.com"
           .format(__version__))
     print("You are using {0} {1} from {2}".format(
         platform.python_implementation(), platform.python_version(),
