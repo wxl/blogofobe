@@ -1,5 +1,5 @@
    digraph {
-     start [shape=circle, label="Blogofile build starts"];
+     start [shape=circle, label="blogofobe build starts"];
      default_config [shape=box, label="Default configuration is loaded"]
      filters_read [shape=box, label="Filters are discovered in the _filters directory,\nimported, and placed on bf.config.filters cache"]
      controllers_read [shape=box, label="Controllers are discovered in the _controllers\ndirectory, imported, and placed on\nbf.config.controllers cache"]
