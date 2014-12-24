@@ -1,3 +1,8 @@
+blogofobe is currently maintained by Walter Lapchynski (polka.bike). As a fork
+of Blogofile, it seems appropriate to give it a similar license. Indeed, I like
+the MIT license and I like the original text that went with it, so we'll just
+keep things the same: 
+
 ################################################################################
 ### Blogofile is written by Ryan McGuire (EnigmaCurry.com)
 ################################################################################
