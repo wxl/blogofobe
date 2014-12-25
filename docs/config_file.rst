@@ -284,6 +284,6 @@ This is a function that gets run after the _site directory is built OR whenever 
 
 .. _Python: http://www.python.org
 
-.. _HierarchicalCache: http://github.com/EnigmaCurry/blogofobe/blob/master/blogofobe/cache.py#L22
+.. _HierarchicalCache: https://github.com/wxl/blogofobe/blob/plugins/blogofobe/cache.py#L26
 
 .. _AttributeError: http://docs.python.org/library/exceptions.html#exceptions.AttributeError
