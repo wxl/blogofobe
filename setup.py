@@ -16,10 +16,8 @@ else:
         raise RuntimeError(
             'On Python 2, blogofobe requires Python 2.6 or later')
 
-with open('README.rst', 'rt') as readme:
+with open('README.md', 'rt') as readme:
     long_description = readme.read()
-with open('CHANGES.txt', 'rt') as changes:
-    long_description += '\n\n' + changes.read()
 
 install_requires = [
     'docutils',
