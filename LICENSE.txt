@@ -1,25 +1,9 @@
-blogofobe is currently maintained by Walter Lapchynski (polka.bike). As a fork
-of Blogofile, it seems appropriate to give it a similar license. Indeed, I like
-the MIT license and I like the original text that went with it, so we'll just
-keep things the same: 
-
-################################################################################
-### Blogofile is written by Ryan McGuire (EnigmaCurry.com)
-################################################################################
-
-Blogofile is released under an MIT style license. However, this author chooses
-to not enforce any violations of the license. 
-
-Any contributors to Blogofile must agree that they relinquish their code to 
-Ryan McGuire to be released under the MIT license with the understanding that 
-he has no intention of enforcing the copyright and permission notice 
-republication requirement.
-
 ################################################################################
 ### MIT License
 ################################################################################
 
 Copyright (c) 2009 Ryan McGuire
+Copyright (c) 2014 Walter Lapchynski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -38,6 +22,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+################################################################################
+### blogofobe is a fork of Blogofile
+################################################################################
+
+As such, many pieces of the codebase originated with Ryan McGuire's work. Every
+attempt has been made to retain the spirit of those original pieces of code and
+consider Ryan the official author. With that in mind, we have included in this
+license the following statement the original author included.
 
 ################################################################################
 ### A statement about Free Software
