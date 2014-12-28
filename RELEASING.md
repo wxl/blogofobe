@@ -18,12 +18,12 @@ $ make clean html
 
   * Blogofobe:
 
-    * blogofobe/__init__.py
+    * blogofobe/\_\_init\_\_.py
     * docs/conf.py
 
   * blogofobe_blog:
 
-    * blogofobe_blog/__init__.py
+    * blogofobe_blog/\_\_init\_\_.py
 
   * blogofobe.com:
 
