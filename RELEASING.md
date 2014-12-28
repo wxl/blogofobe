@@ -1,61 +1,57 @@
 Releasing Blogofobe
 ------
 
-* Do a platform test via tox:
+ * Do a platform test via tox:
 
-```sh
-$ tox -r
-```
+   ```sh
+   $ tox -r
+   ```
 
-* Ensure that the docs build:
+ * Ensure that the docs build:
 
-```sh
-$ cd docs
-$ make clean html
-```
+   ```sh
+   $ cd docs
+   $ make clean html
+   ```
 
-* Change version number in:
+ * Change version number in:
 
-  * Blogofobe:
+   * blogofobe:
 
-    * blogofobe/\_\_init\_\_.py
-    * docs/conf.py
+     * blogofobe/\_\_init\_\_.py
+     * docs/conf.py
 
-  * blogofobe_blog:
+   * blogofobe_blog:
 
-    * blogofobe_blog/\_\_init\_\_.py
+     * blogofobe_blog/\_\_init\_\_.py
 
-  * blogofobe.com:
+ * Test upload to PyPI:
 
-    * _config.py
+   ```sh
+   $ python setup.py sdist register -r testpypi upload -r testpypi
+   ```
 
-* Test upload to PyPI:
+ * Test installation in a pristine virtualenv:
 
-```sh
-$ python setup.py sdist register -r testpypi upload -r testpypi
-```
+   ```sh
+   $ virtualenv --python=python3.2 blogofobe-testrel
+   $ cd blogofobe-testrel
+   $ source bin/activate
+   $ pip install --extra-index-url http://testpypi.python.org/pypi \
+        "blogofobe==<version>"
+   $ pip install --extra-index-url http://testpypi.python.org/pypi \
+        "blogofobe_blog==<version>"
+   ```
 
-* Test installation in a pristine virtualenv:
+   and then test building a site, even if it's the sample blog via::
 
-```sh
-$ virtualenv --python=python3.2 blogooble-testrel
-$ cd blogofobe-testrel
-$ source bin/activate
-$ pip install --extra-index-url http://testpypi.python.org/pypi \
-     "Blogofobe==<version>"
-$ pip install --extra-index-url http://testpypi.python.org/pypi \
-     "blogofobe_blog==<version>"
-```
+   ```sh
+   $ blogofobe init test_blog blog
+   $ blogofobe build -s test_blog
+   ```
 
-and then test building a site, even if it's the sample blog via::
+ * Release to PyPI:
 
-```sh
-$ blogofobe init test_blog blog
-$ blogofobe build -s test_blog
-```
-
-* Release to PyPI:
-
-```sh
-$ python setup.py sdist register upload
-```
+   ```sh
+   $ python setup.py sdist register upload
+   ```
