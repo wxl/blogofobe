@@ -6,7 +6,7 @@ blogofobe Contributors
 The original Blogofile and the blogofile_blog plugin were created by:
 Ryan McGuire <ryan@enigmacurry.com>
 
-The Blogofobe fork was started and is maintained by:
+The blogofobe fork was started and is maintained by:
 Walter Lapchynski <wxl@polka.bike>
 
 The following people have contributed code, documentation, bug
