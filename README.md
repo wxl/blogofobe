@@ -44,4 +44,4 @@ guide, and detailed usage instructions.
 ## Where's the easy button?
 
 1. create a virtualenv
-1. `pip install -U Blogofile && pip install -U blogofile_blog`
+1. `pip install -U Blogofobe && pip install -U blogofobe_blog`
