@@ -45,3 +45,7 @@ guide, and detailed usage instructions.
 
 1. create a virtualenv
 1. `pip install -U Blogofobe && pip install -U blogofobe_blog`
+
+## How can I help?
+
+I thought you'd never ask. Go check out the [developer page on the wiki](https://github.com/wxl/blogofobe/wiki/Developers).
