@@ -48,4 +48,4 @@ guide, and detailed usage instructions.
 
 ## How can I help?
 
-I thought you'd never ask. Go check out the [developer page on the wiki](https://github.com/wxl/blogofobe/wiki/Developers).
+I thought you'd never ask. Go check out the [developer page on the wiki](https://github.com/wxl/blogofobe/wiki/Development).
