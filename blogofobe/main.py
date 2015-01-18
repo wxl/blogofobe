@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""This is Blogofile.
+"""This is blogofobe.
 
 Please take a moment to read LICENSE.txt. It's short.
 """
@@ -34,7 +34,7 @@ bf.logger = logger
 
 
 def main(argv=[]):
-    """Blogofile entry point.
+    """blogofobe entry point.
 
     Set up command line parser, parse args, and dispatch to
     appropriate function. Print help and exit if there are too few args.
@@ -100,7 +100,7 @@ def _setup_parser_template():
     parser_template = argparse.ArgumentParser(add_help=False)
     parser_template.add_argument(
         "--version", action="version",
-        version="Blogofile {0} -- http://www.blogofobe.com -- {1} {2}"
+        version="blogofobe {0} -- http://www.blogofobe.com -- {1} {2}"
         .format(__version__, platform.python_implementation(),
                 platform.python_version()))
     parser_template.add_argument(
@@ -126,7 +126,7 @@ def _setup_help_parser(subparsers):
         help="Show help for a command.")
     parser.add_argument(
         "command", nargs="*",
-        help="a Blogofile subcommand e.g. build")
+        help="a blogofobe subcommand e.g. build")
     parser.set_defaults(func=do_help)
     defaults = {
         'command': None,
@@ -218,7 +218,7 @@ def _setup_info_parser(subparsers):
         "info",
         help="""
             Show information about the
-            Blogofile installation and the current site.
+            blogofobe installation and the current site.
             """)
     parser.add_argument(
         "-s", "--src-dir", dest="src_dir", metavar="DIR",
@@ -425,15 +425,15 @@ def do_serve(args):
 
 
 def do_info(args):
-    """Print some information about the Blogofile installation and the
+    """Print some information about the blogofobe installation and the
     current site.
     """
-    print("This is Blogofile (version {0}) -- http://www.blogofobe.com"
+    print("This is blogofobe (version {0}) -- http://www.blogofobe.com"
           .format(__version__))
     print("You are using {0} {1} from {2}".format(
         platform.python_implementation(), platform.python_version(),
         sys.executable))
-    print("Blogofile is installed at: {0}".format(os.path.split(__file__)[0]))
+    print("blogofobe is installed at: {0}".format(os.path.split(__file__)[0]))
     # Show _config.py paths
     print(("Default config file: {0}".format(config.default_config_path)))
     if os.path.isfile(os.path.join(args.src_dir, "_config.py")):
